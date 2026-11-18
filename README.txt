@@ -1,38 +1,135 @@
-CUSTOMER CHURN INTELLIGENCE — PROFESSIONAL DASHBOARD
+# 📊 Customer Churn Intelligence
 
-1. Extract this ZIP.
-2. Copy your existing customer_churn_model.pkl into this folder, next to app.py.
-3. Open this folder in VS Code.
-4. In the terminal, run:
-   python -m pip install -r requirements.txt
-5. Start the app:
-   python -m streamlit run app.py
+Machine Learning-based telecom customer churn prediction and analytics dashboard.
 
-Upload the original Telco Customer Churn CSV using the sidebar for Overview,
-Churn Analytics and High-Risk Customers.
+## 📌 Project Overview
 
-FEATURES:
-- Professional overview and churn analytics.
-- Individual churn prediction and rule-based retention suggestions.
-- Bulk risk scoring, CSV export and PDF business report.
-- Model Performance page with held-out metrics recorded in the notebook.
-- Logistic Regression coefficient inspection when supported by the saved pipeline.
-- Optional held-out test CSV upload to calculate confusion matrix, ROC curve and metrics.
+Customer Churn Intelligence is an end-to-end Machine Learning project that analyzes telecom customer data, identifies churn patterns, and predicts customers who are likely to leave.
 
-OPTIONAL TEST CSV:
-In Colab, after the train/test split, create and download a held-out test CSV:
-    test_export = X_test.copy()
-    test_export["Churn"] = y_test
-    test_export.to_csv("churn_test_holdout.csv", index=False)
-    from google.colab import files
-    files.download("churn_test_holdout.csv")
-Upload that file on the Model Performance page to calculate a real confusion matrix
-and ROC curve from the held-out test set.
+The project combines data analytics, machine learning, and an interactive Streamlit dashboard to support customer retention strategies.
 
-IMPORTANT:
-- Keep customer_churn_model.pkl in the same folder as app.py.
-- The model is trained for the Telco Customer Churn dataset schema.
-- scikit-learn is pinned to 1.6.1 to match the training environment.
-- Metrics shown by default are the values recorded in the training notebook.
-- Do not use the original full dataset as a substitute for held-out test data.
-- Retention suggestions are rule-based, not causal explanations.
+## 🎯 Objectives
+
+- Analyze customer churn patterns.
+- Identify high-risk customer segments.
+- Perform feature engineering.
+- Build and compare ML classification models.
+- Predict individual and bulk customer churn.
+- Generate customer retention recommendations.
+
+## 📊 Dataset
+
+**Telco Customer Churn Dataset**
+
+- Total Customers: 7,043
+- Original Features: 21
+- Target Variable: Churn
+- Problem Type: Binary Classification
+
+## 🛠️ Technologies Used
+
+- Python
+- Pandas & NumPy
+- Matplotlib & Seaborn
+- Scikit-learn
+- Google Colab
+- Streamlit
+- Joblib
+- Git & GitHub
+
+## ⚙️ Project Workflow
+
+1. Data Loading and Cleaning
+2. Exploratory Data Analysis (EDA)
+3. Feature Engineering
+4. Data Preprocessing
+5. Machine Learning Model Training
+6. Model Evaluation
+7. Customer Churn Prediction
+8. Business Recommendations
+
+## 🤖 Machine Learning Models
+
+Two classification algorithms were implemented:
+
+- Logistic Regression
+- Random Forest Classifier
+
+### Model Performance
+
+| Metric | Logistic Regression | Random Forest |
+|---|---:|---:|
+| Accuracy | 73.95% | 77.79% |
+| Precision | 50.60% | 60.41% |
+| Recall | 79.14% | 47.33% |
+| F1-score | 61.73% | 53.07% |
+| ROC-AUC | 84.68% | 81.93% |
+
+Logistic Regression was selected for the prediction dashboard because of its higher recall and F1-score.
+
+## 💻 Streamlit Dashboard
+
+The interactive dashboard includes:
+
+- **Overview:** Customer statistics and churn insights.
+- **Individual Prediction:** Predict customer churn probability.
+- **Churn Analytics:** Visualize churn patterns.
+- **High-Risk Customers:** Identify and download high-risk customer records.
+- **Model Performance:** Evaluate model metrics and explainability.
+
+Additional features include retention recommendations and downloadable CSV/PDF reports.
+
+## 📁 Project Structure
+
+```text
+customer-churn-analysis/
+│
+├── notebooks/
+│   └── Customer_Churn_Analysis.ipynb
+├── models/
+│   └── customer_churn_model.pkl
+├── app.py
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
+
+## ▶️ Run Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/pranayyadav860-star/customer-churn-analysis.git
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the dashboard:
+
+```bash
+python -m streamlit run app.py
+```
+
+## 💡 Business Impact
+
+The project helps businesses:
+
+- Identify customers at risk of leaving.
+- Understand factors associated with churn.
+- Prioritize customer retention activities.
+- Develop targeted retention strategies.
+- Make data-driven business decisions.
+
+## 👨‍💻 Author
+
+**Pranay Yadav**
+
+B.Tech – Computer Science and Engineering
+
+GitHub: [pranayyadav860-star](https://github.com/pranayyadav860-star)
+
+Project: [Customer Churn Analysis](https://github.com/pranayyadav860-star/customer-churn-analysis)
